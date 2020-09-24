@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+
+.instance {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    padding: 0.5rem;
+    border: 1px solid gray;
+    margin: 0.3rem;
+    button {
+        background: none;
+        border: none;
+        padding: 0.7rem;
+        font-family: "Questrial", sans-serif;
+        border: 1px solid gray;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .instance {
+        padding: 0.3rem;
+        button {
+            padding: 0.5rem;
+        }
+    }
+}

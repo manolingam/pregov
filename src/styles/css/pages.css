@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+.home {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Questrial", sans-serif;
+  color: gray;
+}
+
+.home h2 {
+  margin-bottom: 1rem;
+}
+
+.home #title-helper {
+  margin-bottom: 3rem;
+}
+
+.home #create-instance {
+  background: none;
+  border: none;
+  padding: 0.7rem;
+  font-family: "Questrial", sans-serif;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+}
+
+.home div {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 575px) {
+  .home #title-helper {
+    max-width: 60%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .home div {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .home {
+    font-size: 0.9rem;
+  }
+}
+/*# sourceMappingURL=pages.css.map */
