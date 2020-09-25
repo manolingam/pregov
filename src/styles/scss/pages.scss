@@ -1,28 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 
-.home {
+$font-primary-color: gray;
+$font-style: "Questrial", sans-serif;
+
+.home,
+.create {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: "Questrial", sans-serif;
-    color: gray;
-    h2 {
-        margin-bottom: 1rem;
-    }
-    #title-helper {
-        margin-bottom: 3rem;
-    }
+    font-family: $font-style;
+    color: $font-primary-color;
+}
+
+.home {
     #create-instance {
         background: none;
         border: none;
         padding: 0.7rem;
-        font-family: "Questrial", sans-serif;
-        border: 1px solid gray;
+        font-family: $font-style;
+        border: 1px solid $font-primary-color;
         border-radius: 5px;
         margin-bottom: 1.5rem;
+        color: $font-primary-color;
+    }
+    #create-instance:hover {
+        cursor: pointer;
     }
     div {
         width: 70%;
@@ -34,16 +39,74 @@
     }
 }
 
+.create {
+    div {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        label {
+            margin-bottom: 0.5rem;
+        }
+        input {
+            height: 30px;
+            font-family: $font-style;
+            color: $font-primary-color;
+        }
+    }
+    button {
+        width: 200px;
+        background: none;
+        border: none;
+        padding: 0.7rem;
+        font-family: $font-style;
+        border: 1px solid $font-primary-color;
+        border-radius: 5px;
+        margin-bottom: 1.5rem;
+        margin-top: 1rem;
+        color: $font-primary-color;
+    }
+    button:hover {
+        cursor: pointer;
+    }
+}
+
+.details {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .details-subcontainer {
+        margin-top: 5rem;
+        p {
+            padding: 0.5rem;
+            a {
+                margin-left: 0.3rem;
+            }
+        }
+        div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            p {
+                padding: 0.5rem;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 575px) {
     .home {
-        #title-helper {
-            max-width: 60%;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
         div {
             width: 90%;
             font-size: 0.9rem;
+        }
+    }
+    .create {
+        div {
+            width: 80%;
         }
     }
 }

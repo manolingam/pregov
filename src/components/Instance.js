@@ -1,15 +1,27 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 import "../styles/css/components.css";
 
-const Instance = ({ event_link, price_impact }) => {
+const Instance = (props) => {
     return (
-        <div className='instance'>
-            <p>{event_link}</p>
-            <p>{price_impact}</p>
-            <button>View</button>
+        <div
+            className='instance'
+            onClick={() => {
+                props.history.push(`/create/${props.instance_id}`);
+            }}
+        >
+            <p>{props.event_link}</p>
+            <p>{props.price_impact}</p>
+            <button
+                onClick={() => {
+                    props.history.push(`/create/${props.instance_id}`);
+                }}
+            >
+                View
+            </button>
         </div>
     );
 };
 
-export default Instance;
+export default withRouter(Instance);

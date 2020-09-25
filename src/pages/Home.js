@@ -1,31 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
 
 import Instance from "../components/Instance";
 
 import "../styles/css/pages.css";
 
-const { instance } = require("../utils/MockData");
+const Home = (props) => {
+    const [instances, setInstances] = useState([]);
 
-const Home = () => {
+    const fetchInstances = async () => {
+        let results = await fetch("http://localhost:8000/instances");
+        results = await results.json();
+        setInstances(results);
+    };
+
+    useEffect(() => {
+        fetchInstances();
+    }, []);
+
     return (
         <div className='home'>
-            <h2>PreGov</h2>
-            <p id='title-helper'>
-                Know the impact of your governance decisions before you make
-                them
-            </p>
-            <button id='create-instance'>Create PreGov Instance</button>
+            <button
+                id='create-instance'
+                onClick={() => {
+                    props.history.push("/create");
+                }}
+            >
+                Create PreGov Instance
+            </button>
             <div>
                 <p>Event Link</p>
                 <p>Predicted Price Impact</p>
                 <p>More Info</p>
             </div>
-            {instance.map((instance, index) => {
+            {instances.map((instance, index) => {
                 return (
                     <Instance
                         key={index}
+                        instance_id={instance.id}
                         event_link={instance.event_link}
-                        price_impact={instance.predicted_price_impact}
+                        price_impact={instance.predicted_price_impact_percent}
                     />
                 );
             })}
@@ -33,4 +47,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default withRouter(Home);
