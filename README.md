@@ -1,3 +1,5 @@
+![app](https://raw.githubusercontent.com/manolingam/pregov/master/src/assets/home__snap.png)
+
 # PreGov
 Know the impact of your governance decisions before you make them (UI Web).
 
