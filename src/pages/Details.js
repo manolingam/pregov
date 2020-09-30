@@ -8,7 +8,9 @@ const Details = () => {
     const [instanceInfo, setInfo] = useState([]);
 
     const fetchInstanceInfo = async () => {
-        let results = await fetch(`http://localhost:8000/instances?id=${id}`);
+        let results = await fetch(
+            `https://pregov.netlify.app/functions/mockServer?id=${id}`
+        );
         results = await results.json();
         setInfo(results);
     };

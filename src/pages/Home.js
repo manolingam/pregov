@@ -9,7 +9,9 @@ const Home = (props) => {
     const [instances, setInstances] = useState([]);
 
     const fetchInstances = async () => {
-        let results = await fetch("http://localhost:8000/instances");
+        let results = await fetch(
+            "https://pregov.netlify.app/functions/mockServer"
+        );
         results = await results.json();
         setInstances(results);
     };
