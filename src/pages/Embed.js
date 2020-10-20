@@ -132,13 +132,13 @@ const Embed = () => {
                 </p>
                 <p>
                     Omen Market with Project Coin: {token1Info ? token1Info.name+' @ '+token1Info.price.rate.toFixed(3)+token1Info.price.currency : ''}
-                    <a href={`https://omen.eth.link/#/${token1}`}>
+                    <a href={`https://omen.eth.link/#/${data.question.conditions[0].fixedProductMarketMakers[0].id}`}>
                         <i className='fas fa-external-link-alt'></i>
                     </a>
                 </p>
                 <p>
                     Omen Market with Stable Coin: {token1Info ? token2Info.name+' @ '+token2Info.price.rate.toFixed(3)+token2Info.price.currency : ''}
-                    <a href={`https://omen.eth.link/#/${token2}`}>
+                    <a href={`https://omen.eth.link/#/${data.question.conditions[0].fixedProductMarketMakers[1].id}`}>
                         <i className='fas fa-external-link-alt'></i>
                     </a>
                 </p>
