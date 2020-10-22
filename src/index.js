@@ -2,10 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import ApolloClient, { InMemoryCache } from 'apollo-boost'
+// import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from 'react-apollo';
+
+const client = new ApolloClient({
+  uri: "https://api.thegraph.com/subgraphs/name/protofire/omen",
+  cache: new InMemoryCache()
+});
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById("root")
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
+  document.getElementById("root"),
 );
